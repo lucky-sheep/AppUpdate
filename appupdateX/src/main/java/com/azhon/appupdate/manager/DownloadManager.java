@@ -339,9 +339,9 @@ public class DownloadManager {
             return;
         }
         HttpUtil.postUsage(context.get(), configuration.isUsePlatform());
-        if (checkVersionCode()) {
-            context.get().startService(new Intent(context.get(), DownloadService.class));
-        } else {
+//        if (checkVersionCode()) {
+//            context.get().startService(new Intent(context.get(), DownloadService.class));
+//        } else {
             //对版本进行判断，是否显示升级对话框
             if (isCloseCheck || apkVersionCode > ApkUtil.getVersionCode(context.get())) {
                 dialog = new UpdateDialog(context.get());
@@ -351,7 +351,7 @@ public class DownloadManager {
                     Toast.makeText(context.get(), R.string.latest_version, Toast.LENGTH_SHORT).show();
                 }
                 LogUtil.e(TAG, "当前已是最新版本");
-            }
+//            }
         }
     }
 
