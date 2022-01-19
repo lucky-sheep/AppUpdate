@@ -95,6 +95,11 @@ public class DownloadManager {
     private static DownloadManager manager;
 
     /**
+     * 是否关闭版本号校验
+     */
+    private boolean isCloseCheck = false;
+
+    /**
      * 框架初始化
      *
      * @param context 上下文
@@ -189,6 +194,14 @@ public class DownloadManager {
      */
     public DownloadManager setShowNewerToast(boolean showNewerToast) {
         this.showNewerToast = showNewerToast;
+        return this;
+    }
+
+    /**
+     * 是否关闭版本号校验
+     */
+    public DownloadManager isCloseCheck(boolean isCloseCheck) {
+        this.isCloseCheck = isCloseCheck;
         return this;
     }
 
@@ -330,7 +343,7 @@ public class DownloadManager {
             context.get().startService(new Intent(context.get(), DownloadService.class));
         } else {
             //对版本进行判断，是否显示升级对话框
-            if (apkVersionCode > ApkUtil.getVersionCode(context.get())) {
+            if (isCloseCheck || apkVersionCode > ApkUtil.getVersionCode(context.get())) {
                 dialog = new UpdateDialog(context.get());
                 dialog.show();
             } else {
