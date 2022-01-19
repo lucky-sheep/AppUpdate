@@ -163,13 +163,7 @@ public class UpdateDialog extends Dialog implements View.OnClickListener, OnDown
                 installApk();
                 return;
             }
-            if (forcedUpgrade) {
-                update.setEnabled(false);
-                update.setText(R.string.background_downloading);
-            } else {
-                dismiss();
-            }
-            //回调点击事件
+//            //回调点击事件
             if (buttonClickListener != null) {
                 buttonClickListener.onButtonClick(OnButtonClickListener.UPDATE);
             }
