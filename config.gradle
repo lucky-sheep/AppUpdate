@@ -2,8 +2,8 @@ ext {
     compileSdkVersion = 29
     minSdkVersion = 15
     targetSdkVersion = 29
-    versionCode = 3
-    versionName = "1.0.2"
+    versionCode = 4
+    versionName = "1.0.4"
 
     //新版本描述信息
     versionDesc = "1、增加是否使用AppUpdate开关"
