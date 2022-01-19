@@ -87,7 +87,6 @@ public class UpdateDialog extends Dialog implements View.OnClickListener, OnDown
         TextView size = view.findViewById(R.id.tv_size);
         TextView description = view.findViewById(R.id.tv_description);
         progressBar = view.findViewById(R.id.np_bar);
-        progressBar.setVisibility(forcedUpgrade ? View.VISIBLE : View.GONE);
         update = view.findViewById(R.id.btn_update);
         update.setTag(0);
         View line = view.findViewById(R.id.line);
