@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -134,7 +136,8 @@ public class UpdateDialog extends Dialog implements View.OnClickListener, OnDown
             size.setText(String.format(newVersionSize, manager.getApkSize()));
             size.setVisibility(View.VISIBLE);
         }
-        description.setText(manager.getApkDescription());
+        Spanned s= Html.fromHtml(manager.getApkDescription());
+        description.setText(s);
     }
 
     private void setWindowSize(Context context) {
